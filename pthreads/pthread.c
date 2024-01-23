@@ -1118,7 +1118,6 @@ pthread_main_np(void)
 }
 
 
-#if defined(__i386__) || defined(__x86_64__) || defined(__arm__)
 /* if we are passed in a pthread_t that is NULL, then we return
    the current thread's thread_id. So folks don't have to call
    pthread_self, in addition to us doing it, if they just want 
@@ -1146,7 +1145,6 @@ pthread_threadid_np(pthread_t thread, __uint64_t *thread_id)
 	UNLOCK(_pthread_list_lock);
 	return rval;
 }
-#endif
 
 int
 pthread_getname_np(pthread_t thread, char *threadname, size_t len)
